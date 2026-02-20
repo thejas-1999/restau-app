@@ -10,7 +10,7 @@ const Header = () => {
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn"); // 🔐 logout
+    localStorage.removeItem("isLoggedIn");
     clearCart();
     navigate("/");
   };

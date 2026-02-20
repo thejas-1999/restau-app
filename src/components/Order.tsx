@@ -19,7 +19,6 @@ const Order = () => {
     }, 800);
   };
 
-  /* 🎉 SUCCESS SCREEN */
   if (orderPlaced) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-green-50 px-4">
@@ -45,7 +44,6 @@ const Order = () => {
     );
   }
 
-  /* 🛒 EMPTY CART */
   if (cart.length === 0) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4 text-center animate-fade-up">
@@ -70,7 +68,6 @@ const Order = () => {
     );
   }
 
-  /* 🛒 ORDER PAGE */
   return (
     <div className="min-h-screen bg-gray-100 px-4 sm:px-6 py-6 pb-36 animate-fade-up">
       <h1 className="text-2xl sm:text-3xl font-bold mb-6">Your Order</h1>
@@ -118,7 +115,6 @@ const Order = () => {
         ))}
       </div>
 
-      {/* 🔥 BOTTOM TOTAL BAR */}
       <div className="fixed bottom-0 left-0 right-0 bg-white shadow-2xl p-4 flex justify-between items-center animate-slide-up">
         <div>
           <p className="text-xs text-gray-500">Total Amount</p>

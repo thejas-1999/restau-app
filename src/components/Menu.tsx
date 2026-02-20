@@ -12,9 +12,6 @@ const Menu = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 px-4 sm:px-6 py-6 pb-32 animate-fade-in">
-      {/* Page Title */}
-
-      {/* Food Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {foods.map((food) => (
           <div
@@ -26,7 +23,6 @@ const Menu = () => {
         ))}
       </div>
 
-      {/* Floating Orders Button */}
       {totalCount > 0 && (
         <div className="fixed bottom-4 left-0 right-0 flex justify-center z-50 animate-pop-in">
           <button

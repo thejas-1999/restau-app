@@ -1,12 +1,10 @@
 import { createContext, useContext, useState } from "react";
 import type { Food } from "../constants/foods";
 
-// 🔹 Cart item type (Food + quantity)
 type CartItem = Food & {
   quantity: number;
 };
 
-// 🔹 Context type (ALL functions must be declared here)
 type CartContextType = {
   cart: CartItem[];
   addToCart: (food: Food) => void;
@@ -63,7 +61,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         addToCart,
         increaseQty,
         decreaseQty,
-        clearCart, // ✅ now TS is happy
+        clearCart,
       }}
     >
       {children}
@@ -71,7 +69,6 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// 🔹 Custom hook
 export const useCart = (): CartContextType => {
   const ctx = useContext(CartContext);
   if (!ctx) {
