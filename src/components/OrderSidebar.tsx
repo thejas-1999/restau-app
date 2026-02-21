@@ -17,16 +17,17 @@ const OrderSidebar = () => {
     setTimeout(() => {
       clearCart(); // clear items
       closeCart(); // close sidebar
-      setOrderPlaced(false); // reset state
+      setOrderPlaced(false);
     }, 1200);
   };
 
-  /* 🎉 SUCCESS STATE (TEMPORARY) */
+  /* 🎉 SUCCESS MESSAGE */
   if (orderPlaced) {
     return (
       <aside
         className="
-          fixed inset-y-0 right-0 w-80
+          fixed inset-y-0 right-0
+          w-64 sm:w-72 md:w-80
           lg:static lg:w-full
           bg-green-50 shadow-xl
           rounded-l-2xl lg:rounded-2xl
@@ -42,15 +43,16 @@ const OrderSidebar = () => {
     );
   }
 
-  /* 🛒 NORMAL SIDEBAR */
+  /* 🛒 ORDER SIDEBAR */
   return (
     <aside
       className="
-        fixed inset-y-0 right-0 w-80
+        fixed inset-y-0 right-0
+        w-64 sm:w-72 md:w-80
         lg:static lg:w-full
         bg-white shadow-xl
         rounded-l-2xl lg:rounded-2xl
-        p-4
+        p-3 sm:p-4
         z-50
       "
     >
