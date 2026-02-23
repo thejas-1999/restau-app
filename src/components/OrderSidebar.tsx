@@ -3,7 +3,6 @@ import { useCart } from "../context/CartContext";
 
 const OrderSidebar = () => {
   const { cart, increaseQty, decreaseQty, clearCart, closeCart } = useCart();
-
   const [orderPlaced, setOrderPlaced] = useState(false);
 
   const totalPrice = cart.reduce(
@@ -15,8 +14,8 @@ const OrderSidebar = () => {
     setOrderPlaced(true);
 
     setTimeout(() => {
-      clearCart(); // clear items
-      closeCart(); // close sidebar
+      clearCart();
+      closeCart();
       setOrderPlaced(false);
     }, 1200);
   };
@@ -28,7 +27,7 @@ const OrderSidebar = () => {
         className="
           fixed inset-y-0 right-0
           w-64 sm:w-72 md:w-80
-          lg:static lg:w-full
+          lg:sticky lg:top-24 lg:h-auto
           bg-green-50 shadow-xl
           rounded-l-2xl lg:rounded-2xl
           p-6
@@ -49,7 +48,7 @@ const OrderSidebar = () => {
       className="
         fixed inset-y-0 right-0
         w-64 sm:w-72 md:w-80
-        lg:static lg:w-full
+        lg:sticky lg:top-24 lg:h-fit
         bg-white shadow-xl
         rounded-l-2xl lg:rounded-2xl
         p-3 sm:p-4
@@ -58,8 +57,8 @@ const OrderSidebar = () => {
     >
       <h2 className="text-xl font-bold mb-4">Your Order</h2>
 
-      {/* Items */}
-      <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-1">
+      {/* Items (scroll only if needed) */}
+      <div className="space-y-4 max-h-[60vh] lg:max-h-none overflow-y-auto pr-1">
         {cart.map((item) => (
           <div key={item.id} className="flex items-center gap-3 border-b pb-2">
             <img
